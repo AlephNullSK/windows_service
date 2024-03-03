@@ -10,7 +10,7 @@ except ImportError as exc:
     raise OSError("OS Windows is required!") from exc
 
 
-def write_to_event_log(event_source, event_category, event_id, message):
+def write_to_event_log(event_source: str, event_category: int, event_id: int, message: str) -> None:
     # Open the Application event log
     log_handle = win32evtlog.OpenEventLog(None, event_source)
 

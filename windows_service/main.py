@@ -11,16 +11,15 @@ except ImportError:
 from .windows import _SMWinservice, write_to_event_log
 
 
-def cli():
+def cli() -> None:
     if sys.argv[1] == "shell":
         shell()
     else:
         print("Standard CLI functionality")
 
 
-def shell():
+def shell() -> None:
     import code
-
     code.interact()
 
 
