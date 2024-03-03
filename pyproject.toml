@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "windows-service"
+version = "0.1.0"
+description = "Repository demonstrates, how one can create working Windows Service in Python"
+authors = ["Aleph Null s.r.o. <hello@alephnull.sk>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pywin32 = { version = "^306", markers = "sys_platform == 'win32'"}
+pyinstaller = { version = "^6.3.0", markers = "sys_platform == 'win32'"}
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.3.0"
+isort = "^5.10.1"
+flake8 = "^6.1.0"
+pre-commit = "^2.18.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+lines_between_sections = 1
