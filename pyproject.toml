@@ -7,9 +7,9 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.12,<3.13"
 pywin32 = { version = "^306", markers = "sys_platform == 'win32'"}
-pyinstaller = { version = "^6.3.0", markers = "sys_platform == 'win32'"}
+pyinstaller = { version = "^6.4.0", markers = "sys_platform == 'win32'"}
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.3.0"
