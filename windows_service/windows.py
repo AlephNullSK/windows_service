@@ -1,11 +1,11 @@
 try:
     import servicemanager
+    import win32con
     import win32event
-    import win32service
-    import win32serviceutil
     import win32evtlog
     import win32evtlogutil
-    import win32con
+    import win32service
+    import win32serviceutil
 except ImportError as exc:
     raise OSError("OS Windows is required!") from exc
 

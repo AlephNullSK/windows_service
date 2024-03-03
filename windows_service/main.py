@@ -20,6 +20,7 @@ def cli():
 
 def shell():
     import code
+
     code.interact()
 
 
@@ -30,12 +31,7 @@ class ExampleWindowsService(_SMWinservice):
 
     def main(self) -> None:
         while True:
-            write_to_event_log(
-                "Example_Windows_Service",
-                0,
-                1,
-                "It works!"
-            )
+            write_to_event_log("Example_Windows_Service", 0, 1, "It works!")
             time.sleep(15)
 
 
