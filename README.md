@@ -61,7 +61,7 @@ python -m poetry run python -m windows_service.main remove
 You can also build EXE file using PyInstaller and install it as binary:
 
 ```
-python -m poetry run pyinstaller windows_service/main.py --copy-metadata windows-service --hiddenimport win32timezone --onefile -n Example_Win_Service
+python -m poetry run pyinstaller entrypoint.py --copy-metadata windows-service --hiddenimport win32timezone --onefile -n Example_Win_Service
 dist/Example_Win_Service.exe install
 dist/Example_Win_Service.exe start
 ```

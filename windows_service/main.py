@@ -8,7 +8,7 @@ except ImportError:
     print("Windows only!")
     sys.exit(1)
 
-from .windows import _SMWinservice, write_to_event_log
+from .windows import _SMWinservice
 
 
 def cli() -> None:
@@ -30,11 +30,11 @@ class ExampleWindowsService(_SMWinservice):
 
     def main(self) -> None:
         while True:
-            write_to_event_log("Example_Windows_Service", 0, 1, "It works!")
+            print("It works!")
             time.sleep(15)
 
 
-if __name__ == "__main__":
+def handle_service():
     if len(sys.argv) == 1:
         servicemanager.Initialize()
         servicemanager.PrepareToHostSingle(ExampleWindowsService)
@@ -48,3 +48,7 @@ if __name__ == "__main__":
         cli()
     else:
         win32serviceutil.HandleCommandLine(ExampleWindowsService)
+
+
+if __name__ == "__main__":
+    handle_service()

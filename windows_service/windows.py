@@ -10,20 +10,6 @@ except ImportError as exc:
     raise OSError("OS Windows is required!") from exc
 
 
-def write_to_event_log(event_source: str, event_category: int, event_id: int, message: str) -> None:
-    # Open the Application event log
-    log_handle = win32evtlog.OpenEventLog(None, event_source)
-
-    # Specify the event details
-    event_type = win32evtlog.EVENTLOG_INFORMATION_TYPE
-
-    # Write the event to the log
-    win32evtlogutil.ReportEvent(log_handle, event_type, event_category, event_id, None, [message])
-
-    # Close the event log
-    win32evtlog.CloseEventLog(log_handle)
-
-
 class _SMWinservice(win32serviceutil.ServiceFramework):
     _svc_name_ = "PythonService"
     _svc_display_name_ = "Python Service"
